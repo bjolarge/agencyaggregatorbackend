@@ -7,6 +7,7 @@ import {
     PrimaryGeneratedColumn,
   } from 'typeorm';
   import { Exclude } from 'class-transformer';
+import Role from '../enum/role.enum';
   
   @Entity('registeredusers')
   class User {
@@ -35,11 +36,13 @@ import {
     @Column({ default: false })
     public isEmailConfirmed: boolean;
 
-    // @OneToOne(() => Profile, (profile) => profile.user) // specify inverse side as a second parameter
-    // @JoinColumn()
-    // profile: Profile
-
-
+    @Column({
+      type: 'enum',
+     enum: Role,
+      //array: true,
+      default: [Role.Admin]
+    })
+     public roles: Role[]
   
   }
   

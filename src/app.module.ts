@@ -9,6 +9,8 @@ import { UsersModule } from './users/users.module';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { EmailModule } from './email/email.module';
 import { EmailConfirmationModule } from './email-confirmation/email-confirmation.module';
+import { CompanyProfileModule } from './company-profile/company-profile.module';
+import { AgencyModule } from './agency/agency.module';
 
 @Module({
   imports: [
@@ -69,6 +71,8 @@ import { EmailConfirmationModule } from './email-confirmation/email-confirmation
     AuthenticationModule,
     EmailModule,
     EmailConfirmationModule,
+    CompanyProfileModule,
+    AgencyModule,
   ],
   controllers: [AppController],
   providers: [AppService],
